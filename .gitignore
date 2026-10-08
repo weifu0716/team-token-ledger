@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+data/
+*.db
+*.db-*
+*.sqlite*
+enrollment*.json
+config.json
+admin-key.txt
+dist/
+.env
+.DS_Store
+test-results/
+*.jsonl
+team-report-*.md
+team-report-*.csv

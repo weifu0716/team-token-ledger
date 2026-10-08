@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>團隊用量帳本</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head>
+<body>
+<header class="masthead"><a class="brand" href="/">團隊用量帳本 <span>TEAM TOKEN LEDGER</span></a><div class="header-end"><span class="quiet">收集程式不呼叫 AI</span><button id="logout" class="text-button" hidden>登出</button></div></header>
+<main>
+<section id="login" class="login">
+<p class="eyebrow">給管理者的每日工作視窗</p><h1>知道用在哪裡，<br>再決定怎麼用。</h1><p class="intro">集中查看員工電腦回報的 Codex 用量與工作線索。<br>需要建議時，匯出日報交給你的 Claude。</p>
+<form id="login-form"><label for="key">管理金鑰</label><input id="key" type="password" autocomplete="off" required placeholder="貼上 admin-key.txt 的內容"><button type="submit">開啟帳本 <span aria-hidden="true">→</span></button></form>
+<p class="quiet">金鑰由你的伺服器產生，只在這個分頁登入期間保存。</p>
+</section>
+<section id="dashboard" hidden>
+<div class="page-heading"><div><p class="eyebrow">DAILY OBSERVATIONS</p><h1>今天，團隊把 AI 用在哪裡？</h1><p class="subtitle">從各台電腦回報的紀錄開始，找出值得聊的工作。</p></div><button id="add-open" class="secondary">＋ 配對員工</button></div>
+<section class="toolbar" aria-label="報表篩選"><div class="date-controls"><label for="day">日期</label><input id="day" type="date" required><label for="offset">時區</label><select id="offset"><option value="480">UTC+8 台灣</option><option value="0">UTC</option><option value="540">UTC+9</option><option value="-300">UTC−5</option><option value="-240">UTC−4</option></select><button id="refresh" class="text-button">重新整理</button></div><div class="exports"><button id="export-md" class="secondary">匯出給 Claude ↗</button><button id="export-csv" class="text-button">CSV ↓</button></div></section>
+<div class="overview"><div><span class="label">當日已觀測 Token</span><strong id="total">—</strong><span class="quiet">輸入＋輸出；快取已包含在輸入內</span></div><div class="coverage"><span id="coverage">尚未載入</span><span id="updated" class="quiet"></span></div></div>
+<p class="notice"><b>這份帳本的範圍</b>　數字來自本機紀錄，不代表訂閱額度或費用。未完成跨電腦同步驗證前，不宜作個人歸責；Token 多寡也不能當成績效。</p>
+<div id="empty" class="empty" hidden><h2>先連上第一台員工電腦。</h2><p>按「配對員工」下載專屬配對檔，再依員工安裝說明完成設定。這裡會從安裝後的新紀錄開始累計。</p></div>
+<div class="table-wrap" id="table-wrap"><table><thead><tr><th>員工／裝置</th><th>回報狀態</th><th class="numeric">已觀測 Token</th><th class="numeric">其中快取</th><th>工作與管理</th></tr></thead><tbody id="rows"></tbody></table></div>
+<section id="detail" class="detail" hidden><div class="detail-heading"><h2 id="detail-title"></h2><button class="text-button" id="detail-close">收起 ×</button></div><p id="detail-note" class="quiet"></p><div id="models" class="models"></div><div id="tasks"></div></section>
+<p class="footnote">每分鐘更新這個頁面；員工端預設每 5 分鐘送出新增資料。兩者都不消耗模型 Token。電腦睡眠、關機或離線時會延後回報。</p>
+</section>
+<p id="message" role="status" aria-live="polite"></p>
+</main>
+<dialog id="pair-dialog"><form id="pair-form"><div class="detail-heading"><h2>配對一台員工電腦</h2><button type="button" id="pair-close" class="text-button" aria-label="關閉配對視窗">×</button></div><p>每台電腦用一份專屬配對檔；檔案內含上傳憑證，請私下交付。</p><label for="employee-name">員工／裝置名稱</label><input id="employee-name" maxlength="60" required placeholder="例如：A 的工作電腦"><label for="endpoint">員工可連到的伺服器網址</label><input id="endpoint" type="url" required placeholder="https://ledger.example.com"><p class="quiet">localhost 只適合同機測試。遠端員工需要可連線的 HTTPS 網址。</p><button type="submit">建立並下載配對檔</button><p id="pair-message" role="status"></p></form></dialog>
+<footer><span>TEAM TOKEN LEDGER / 0.1</span><span>讓數字成為對話的起點。</span></footer>
+</body></html>
