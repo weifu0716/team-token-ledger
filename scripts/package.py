@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 TOP = ("README.md", "AGENTS.md", "CLAUDE.md", "PRODUCT.md", "SETUP.md", "SECURITY.md", "CHANGELOG.md", "LICENSE", ".gitignore", ".gitattributes", ".dockerignore", "Dockerfile", "compose.yaml")
-FOLDERS = ("ledger", "employee", "boss", "docs", "scripts", "tests", ".github")
+FOLDERS = ("ledger", "employee", "boss", "daily", "docs", "scripts", "tests", ".github")
 SUFFIXES = {".py", ".html", ".js", ".css", ".ps1", ".sh", ".md", ".png", ".svg", ".yml"}
 
 
@@ -16,6 +16,7 @@ def manifest():
     files = [ROOT / name for name in TOP]
     for folder in FOLDERS:
         files += [p for p in (ROOT / folder).rglob("*") if p.is_file() and p.suffix in SUFFIXES and "__pycache__" not in p.parts]
+    files.append(ROOT/'daily/requirements.txt')
     return sorted(files)
 
 
@@ -44,7 +45,7 @@ if __name__ == "__main__":
     if args.list:
         print("\n".join(str(p.relative_to(ROOT)).replace("\\", "/") for p in files))
     else:
-        output = ROOT / "dist/team-token-ledger-0.1.0.zip"
+        output = ROOT / "dist/team-token-ledger-0.2.0.zip"
         output.parent.mkdir(exist_ok=True)
         with zipfile.ZipFile(output, "w", compression=zipfile.ZIP_DEFLATED) as archive:
             for path in files:

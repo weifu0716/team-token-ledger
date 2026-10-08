@@ -1,51 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="990" viewBox="0 0 1440 990" role="img" aria-labelledby="title desc">
-<title id="title">團隊用量帳本：角色、資料流與安裝順序</title><desc id="desc">公開GitHub提供程式；各台員工電腦用獨立配對憑證回報公司私有接收站，老闆以管理金鑰看報表，再手動匯出給Claude。先架老闆端，再配對員工，兩台驗收後擴大。</desc>
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2d6958"/></marker><style>text{font-family:'Microsoft JhengHei','Noto Sans TC',sans-serif;fill:#233c35}.title{font-size:36px;font-weight:700}.sub{font-size:19px;fill:#566b61}.label{font-size:18px;fill:#476358}.heading{font-size:27px;font-weight:700}.body{font-size:21px}.small{font-size:17px;fill:#566b61}.tag{font-size:16px;font-weight:700;fill:#906020}.edge{fill:none;stroke:#2d6958;stroke-width:3;marker-end:url(#arrow)}.dash{stroke-dasharray:8 6}.box{fill:#fff;stroke:#afc1b7;stroke-width:1.5}.step{font-size:21px;font-weight:700}.warn{font-size:19px;fill:#7b5424}</style></defs>
-<rect width="1440" height="990" fill="#f6f5f0"/>
-<text x="56" y="67" class="title">團隊用量帳本｜整體架構與安裝順序</text>
-<text x="56" y="107" class="sub">人數可以逐台增加；A、B、C、D 只是示例。v0.1.0 按裝置統計，一人多機合併仍待補。</text>
-<rect x="56" y="145" width="1328" height="100" rx="8" fill="#e8eee7"/>
-<text x="82" y="187" class="heading">GitHub 公開程式庫</text>
-<text x="82" y="220" class="small">下載與交接入口；不存員工回報</text>
-<text x="535" y="186" class="body">員工安裝程式</text><text x="535" y="219" class="body">老闆架設說明 ＋ Claude 交接檔</text>
-<text x="1090" y="188" class="tag">已公開</text><text x="1090" y="220" class="small">接收主機需另外架設</text>
-<path d="M222 245 L222 309" class="edge dash"/><path d="M709 245 L709 309" class="edge dash"/>
-<rect x="56" y="316" width="350" height="260" rx="8" class="box"/>
-<text x="82" y="359" class="heading">員工電腦 1 … N</text>
-<text x="82" y="400" class="body">每台一份專屬配對檔</text>
-<text x="82" y="434" class="body">綁定老闆指定的裝置名稱</text>
-<text x="82" y="481" class="small">背景程式讀取新增 Codex 紀錄</text>
-<text x="82" y="514" class="small">預設：模型、Token、專案名稱</text>
-<text x="82" y="547" class="small">工作原文片段：另行明確開啟</text>
-<rect x="529" y="316" width="360" height="260" rx="8" class="box"/>
-<text x="555" y="359" class="heading">公司私有接收站</text>
-<text x="555" y="400" class="body">驗證配對 → 去重 → 保存</text>
-<text x="555" y="434" class="body">報表與資料庫留在這裡</text>
-<text x="555" y="481" class="small">需要持續運作的電腦或主機</text>
-<text x="555" y="514" class="small">遠端員工須有可連線的 HTTPS</text>
-<text x="555" y="547" class="tag">朋友的主機／網址：尚待部署</text>
-<rect x="1011" y="316" width="373" height="260" rx="8" class="box"/>
-<text x="1037" y="359" class="heading">老闆的網頁看板</text>
-<text x="1037" y="400" class="body">持有管理金鑰才能讀報表</text>
-<text x="1037" y="434" class="body">按日查看用量與工作線索</text>
-<text x="1037" y="481" class="small">顯示回報中斷、缺件與重複爭議</text>
-<text x="1037" y="514" class="small">員工上傳憑證不能讀取此資料</text>
-<text x="1037" y="547" class="small">目前沒有員工自助查詢頁</text>
-<path d="M406 431 L520 431" class="edge"/><text x="420" y="405" class="label">每 5 分鐘</text><text x="420" y="463" class="small">獨立憑證</text>
-<path d="M889 431 L1002 431" class="edge"/><text x="913" y="405" class="label">授權讀取</text>
-<path d="M1198 576 L1198 636" class="edge"/><text x="1037" y="614" class="label">老闆手動匯出日報</text>
-<rect x="1011" y="644" width="373" height="113" rx="8" fill="#e8eee7" stroke="#afc1b7"/>
-<text x="1037" y="685" class="heading">老闆的 Claude</text><text x="1037" y="723" class="body">讀報表、分析、給改善建議</text>
-<text x="56" y="631" class="heading">哪些步驟會消耗模型額度？</text>
-<text x="56" y="673" class="body">收集、定時上傳、統計、網頁更新：都不呼叫 AI。</text>
-<text x="56" y="710" class="body">老闆主動請 Claude 分析時，才使用 Claude 額度。</text>
-<text x="56" y="747" class="small">主機、網路服務若採付費方案，另有其成本。</text>
-<line x1="56" y1="790" x2="1384" y2="790" stroke="#c8d1c7"/>
-<text x="56" y="832" class="heading">安裝順序</text>
-<text x="56" y="882" class="step">① 老闆架接收站</text><path d="M250 875 L315 875" class="edge"/>
-<text x="334" y="882" class="step">② 逐台建立配對</text><path d="M529 875 L593 875" class="edge"/>
-<text x="612" y="882" class="step">③ 員工安裝</text><path d="M774 875 L836 875" class="edge"/>
-<text x="855" y="882" class="step">④ 兩台先驗收</text><path d="M1030 875 L1090 875" class="edge"/>
-<text x="1111" y="882" class="step">⑤ 通過才全員安裝</text>
-<text x="56" y="946" class="warn">正式導入前：驗證共用帳號是否同步混帳。裝置回報 ≠ 已證明本人發起；Token ≠ 訂閱額度／費用／績效。</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#71866d"/></marker></defs>
+<rect width="1200" height="690" fill="#f6f5f0"/>
+<g font-family="Microsoft JhengHei,sans-serif" fill="#233c35">
+<text x="60" y="75" font-size="34" font-weight="bold">每天交日報，老闆看收件</text>
+<text x="60" y="115" font-size="20">v0.2 · 姓名分類、日期歸檔 · 不需同一內網 · 日常排程不呼叫 AI</text>
+<g fill="white" stroke="#cbd7cb"><rect x="60" y="165" width="330" height="300" rx="12"/><rect x="435" y="165" width="330" height="300" rx="12"/><rect x="810" y="165" width="330" height="300" rx="12"/></g>
+<path d="M395 310 H430 M770 310 H805" stroke="#71866d" stroke-width="3" marker-end="url(#arrow)"/>
+<g font-size="25" font-weight="bold"><text x="85" y="210">員工自己的電腦</text><text x="460" y="210">公司同步資料夾</text><text x="835" y="210">老闆自己的電腦</text></g>
+<g font-size="19">
+<text x="85" y="253">一次安裝：姓名＋路徑</text><text x="85" y="291">每日 17:00 產 PDF</text><text x="85" y="329">附核對檔，使用普通程式</text><text x="85" y="382">關機／斷線：恢復後補交</text><text x="85" y="420">晚間使用：更新，隔日結算</text>
+<text x="460" y="253">Google Drive／OneDrive</text><text x="460" y="291">2026-10-08／王小明.pdf</text><text x="460" y="329">2026-10-08／陳小美.pdf</text><text x="460" y="382">.checks 核對檔也要同步</text><text x="460" y="420">存入本機 ≠ 老闆已收到</text>
+<text x="835" y="253">姓名名單：一行一人</text><text x="835" y="291">17:15 檢查實際收到的檔案</text><text x="835" y="329">本機網頁：已交／未交／疑點</text><text x="835" y="382">重算 Token、抓重複及改檔</text><text x="835" y="420">需要時再請 Claude 分析</text>
+</g>
+<rect x="60" y="505" width="1080" height="130" rx="12" fill="#e6eee6"/>
+<text x="85" y="543" font-size="21" font-weight="bold">先兩人試交，再推全員</text>
+<text x="85" y="578" font-size="18">數字必須算得攏；但目前沒有官方帳號總 Token 可獨立對帳，也不保證防止有意造假。</text>
+<text x="85" y="610" font-size="18">公司設定資料夾讀寫權限；有權讀取的人就能看 PDF。Windows 已實測，公司雙機同步待驗收。</text>
+</g></svg>
