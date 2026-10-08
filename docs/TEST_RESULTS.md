@@ -16,6 +16,6 @@
 - 兩台不同實體電腦、共用帳號時的同步／工作歸屬；這是正式按人歸責前的必要步驟。
 - macOS LaunchAgent 安裝與登入後執行；只提供腳本，不能稱已跨平台驗收。
 - Docker、遠端網路、HTTPS反向代理、公網承載、長期磁碟使用與正式公司部署。
-- GitHub Actions 的3種OS／3版Python矩陣，發布後由CI實跑才成立。
+- GitHub Actions 的3種OS／3版Python矩陣。因發布帳號未授權 workflow 權限，以 `docs/ci-template.yml` 範本交付；管理者另外啟用並實跑後才成立。
 
 這些結果不表示所有 Codex 版本、雲端任務或遺失的紀錄皆受支援。請對照 `ACCEPTANCE.md` 在自己的環境補齊驗收。

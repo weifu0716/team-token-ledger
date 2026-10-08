@@ -70,4 +70,6 @@ python -m ledger server
 
 瀏覽 `http://127.0.0.1:8765`。啟動輸出只顯示管理金鑰的檔案位置；請自己開檔貼入登入欄。
 
+可選的 GitHub Actions 測試矩陣放在 [docs/ci-template.yml](docs/ci-template.yml)。儲存庫管理者需要啟用 CI 時，將它放至 `.github/workflows/test.yml`，使用具有 workflow 權限的發布方式；此交付版未啟用自動工作流程。
+
 MIT 授權。程式可分享，**資料庫、配對檔、登入金鑰與私人日報不可隨程式分享。**
