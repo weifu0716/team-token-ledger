@@ -7,7 +7,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-TOP = ("README.md", "AGENTS.md", "CLAUDE.md", "PRODUCT.md", "SETUP.md", "SECURITY.md", "CHANGELOG.md", "LICENSE", ".gitignore", ".dockerignore", "Dockerfile", "compose.yaml")
+TOP = ("README.md", "AGENTS.md", "CLAUDE.md", "PRODUCT.md", "SETUP.md", "SECURITY.md", "CHANGELOG.md", "LICENSE", ".gitignore", ".gitattributes", ".dockerignore", "Dockerfile", "compose.yaml")
 FOLDERS = ("ledger", "employee", "boss", "docs", "scripts", "tests", ".github")
 SUFFIXES = {".py", ".html", ".js", ".css", ".ps1", ".sh", ".md", ".png", ".yml"}
 
