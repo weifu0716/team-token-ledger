@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="690" viewBox="0 0 1200 690">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6" fill="#71866d"/></marker></defs>
+<rect width="1200" height="690" fill="#f6f5f0"/>
+<g font-family="Microsoft JhengHei,sans-serif" fill="#233c35">
+<text x="60" y="75" font-size="34" font-weight="bold">每天交日報，老闆看收件</text>
+<text x="60" y="115" font-size="20">v0.2 · 姓名分類、日期歸檔 · 不需同一內網 · 日常排程不呼叫 AI</text>
+<g fill="white" stroke="#cbd7cb"><rect x="60" y="165" width="330" height="300" rx="12"/><rect x="435" y="165" width="330" height="300" rx="12"/><rect x="810" y="165" width="330" height="300" rx="12"/></g>
+<path d="M395 310 H430 M770 310 H805" stroke="#71866d" stroke-width="3" marker-end="url(#arrow)"/>
+<g font-size="25" font-weight="bold"><text x="85" y="210">員工自己的電腦</text><text x="460" y="210">公司同步資料夾</text><text x="835" y="210">老闆自己的電腦</text></g>
+<g font-size="19">
+<text x="85" y="253">一次安裝：姓名＋路徑</text><text x="85" y="291">每日 17:00 產 PDF</text><text x="85" y="329">附核對檔，使用普通程式</text><text x="85" y="382">關機／斷線：恢復後補交</text><text x="85" y="420">晚間使用：更新，隔日結算</text>
+<text x="460" y="253">Google Drive／OneDrive</text><text x="460" y="291">2026-10-08／王小明.pdf</text><text x="460" y="329">2026-10-08／陳小美.pdf</text><text x="460" y="382">.checks 核對檔也要同步</text><text x="460" y="420">存入本機 ≠ 老闆已收到</text>
+<text x="835" y="253">姓名名單：一行一人</text><text x="835" y="291">17:15 檢查實際收到的檔案</text><text x="835" y="329">本機網頁：已交／未交／疑點</text><text x="835" y="382">重算 Token、抓重複及改檔</text><text x="835" y="420">需要時再請 Claude 分析</text>
+</g>
+<rect x="60" y="505" width="1080" height="130" rx="12" fill="#e6eee6"/>
+<text x="85" y="543" font-size="21" font-weight="bold">先兩人試交，再推全員</text>
+<text x="85" y="578" font-size="18">數字必須算得攏；但目前沒有官方帳號總 Token 可獨立對帳，也不保證防止有意造假。</text>
+<text x="85" y="610" font-size="18">公司設定資料夾讀寫權限；有權讀取的人就能看 PDF。Windows 已實測，公司雙機同步待驗收。</text>
+</g></svg>

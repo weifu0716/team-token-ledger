@@ -12,6 +12,13 @@ dist/
 .env
 .DS_Store
 test-results/
+output/
+daily-config.json
+boss-config.json
+daily-state.json
+receipt-history.json
+program-manifest.json
+.checks/
 *.jsonl
 team-report-*.md
 team-report-*.csv
