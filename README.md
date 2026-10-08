@@ -51,6 +51,7 @@
 
 ## 文件入口
 
+- [給老闆的架構與導入說明](docs/OWNER_GUIDE.md)（含架構圖、角色權限、員工分類及正式導入前缺口）
 - [員工安裝與移除](employee/INSTALL.md)
 - [老闆給 Claude 的交接檔](boss/CLAUDE_HANDOFF.md)
 - [架設、更新與備份](SETUP.md)
